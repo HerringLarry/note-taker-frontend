@@ -5,16 +5,15 @@ import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule, MatButtonModule } from '@angular/material';
-import { LoginButtonComponent } from './login-button/login-button.component';
-import { RegisterButtonComponent } from './register-button/register-button.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule, SharedModule, LoginRoutingModule, MatFormFieldModule, MatOptionModule, MatInputModule, MatSelectModule,
-    MatButtonModule,
+    MatButtonModule, ReactiveFormsModule,
   ],
   declarations: [
-    LoginComponent, LoginFormComponent, LoginButtonComponent, RegisterButtonComponent,
+    LoginComponent, LoginFormComponent,
   ],
   providers: [
   ],
