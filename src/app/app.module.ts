@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, SharedModule, LoginModule, AppRoutingModule,  ReactiveFormsModule, FormsModule,
+    BrowserModule, BrowserAnimationsModule, SharedModule, LoginModule, AppRoutingModule,
+    ReactiveFormsModule, FormsModule, HttpClientModule,
   ],
   providers: [ DataRequestorService],
   bootstrap: [AppComponent]

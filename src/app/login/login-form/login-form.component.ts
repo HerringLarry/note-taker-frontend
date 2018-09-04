@@ -23,7 +23,10 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit() {
     if ( this.loginFormGroup.valid) {
-      // this._dataRequestorService.getRequest()
+      const request: string = 'users/' + this.loginFormGroup.value.username + '/' + this.loginFormGroup.value.password;
+      this._dataRequestorService.getRequest(request).subscribe( result => {
+        console.log(result);
+      });
     }
   }
 
