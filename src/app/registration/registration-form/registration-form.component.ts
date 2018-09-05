@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
+  static mobileRegExp: string = '^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$';
 
   registrationFormGroup: FormGroup;
 
@@ -20,8 +21,8 @@ export class RegistrationFormComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      mobile: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      mobile: new FormControl('', [Validators.required, Validators.pattern(RegistrationFormComponent.mobileRegExp)]),
    });
   }
 
@@ -29,7 +30,7 @@ export class RegistrationFormComponent implements OnInit {
     const userInfoDto: UserInfoDto = new UserInfoDto( this.registrationFormGroup );
     if ( this.registrationFormGroup.valid) {
       this._dataRequestor.postRequest('users', userInfoDto).subscribe( result => {
-        alert('result');
+        alert(result);
       });
     }
   }
