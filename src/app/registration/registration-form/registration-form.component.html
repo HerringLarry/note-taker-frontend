@@ -1,5 +1,5 @@
 <div class="example-container">
-  <form [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()">
+  <form [formGroup]="formGroup">
   <mat-form-field>
     <mat-label>username</mat-label>
     <input matInput placeholder="" formControlName="username">
@@ -24,8 +24,8 @@
     <mat-label>Mobile</mat-label>
     <input matInput placeholder="" type="tel" formControlName="mobile">
   </mat-form-field><br>
-    <div class="registration-buttons">
-      <button class="submit-button" type="submit" mat-flat-button color="primary"> Register </button>
+    <div class="next-button">
+      <button  type="button" mat-flat-button color="primary" matStepperNext> Next </button>
     </div>
   </form>
 </div>
