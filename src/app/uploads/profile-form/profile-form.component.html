@@ -1,0 +1,16 @@
+<div class="example-container">
+  <form [formGroup]="profileForm">
+  <mat-form-field>
+    <mat-label>bio</mat-label>
+    <textarea matInput placeholder="" formControlName="bio"></textarea>
+  </mat-form-field><br>
+  <mat-form-field>
+      <mat-label>interests</mat-label>
+      <textarea matInput placeholder="" formControlName="interests"></textarea>
+  </mat-form-field><br>
+    <div class="previous-button">
+      <button mat-flat-button matStepperNext color="accent"> Next </button>
+      <button type="button" mat-flat-button color="primary"  (click)="onSubmit()" class="submit-button"> Submit </button>
+    </div>
+  </form>
+</div>

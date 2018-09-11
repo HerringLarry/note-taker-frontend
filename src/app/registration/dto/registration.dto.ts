@@ -9,7 +9,7 @@ export class RegistrationDto {
     }
 }
 
-class RegistrationFormDto {
+export class RegistrationFormDto {
     username: string;
     password: string;
     firstName: string;

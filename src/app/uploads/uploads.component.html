@@ -1,0 +1,16 @@
+<app-panel
+  [displaySmall]="false"
+  [title]="'Profile'"
+>
+<mat-horizontal-stepper>
+  <mat-step>
+    <app-profile-form
+      [profileForm]="profileForm"
+      (submitEmitter)="onSubmit($event)"
+    ></app-profile-form>
+  </mat-step>
+  <mat-step>
+    <app-profile-photo-uploader></app-profile-photo-uploader>
+  </mat-step>
+</mat-horizontal-stepper>
+</app-panel>

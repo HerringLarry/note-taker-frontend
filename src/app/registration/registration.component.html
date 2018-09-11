@@ -2,14 +2,6 @@
   [displaySmall]="false"
   [title]="'Registration'"
 >
-  <mat-horizontal-stepper #stepper>
-    <mat-step [stepControl]="registrationFormGroup">
-      <app-registration-form [formGroup]="registrationFormGroup">
-      </app-registration-form>
-    </mat-step>
-    <mat-step [stepControl]="profileFormGroup">
-      <app-profile-form [formGroup]="profileFormGroup" (submitEmitter)="onSubmit()">
-      </app-profile-form>
-    </mat-step>
-</mat-horizontal-stepper>
+    <app-registration-form [formGroup]="registrationFormGroup" (submitEmitter)="onSubmit()">
+    </app-registration-form>
 </app-panel>

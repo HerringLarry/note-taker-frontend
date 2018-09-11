@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -10,9 +10,15 @@ export class RegistrationFormComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
 
+  @Output() submitEmitter: EventEmitter<void> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {}
+
+  onSubmit(): void {
+    this.submitEmitter.emit();
+  }
 
 
 }

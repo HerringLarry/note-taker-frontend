@@ -2,7 +2,8 @@ import { DataRequestorService } from './../common/services/data-requestor.servic
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormMaker } from './form-maker/form-maker';
-import { RegistrationDto } from './dto/registration.dto';
+import { RegistrationDto, RegistrationFormDto } from './dto/registration.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -12,21 +13,19 @@ import { RegistrationDto } from './dto/registration.dto';
 export class RegistrationComponent implements OnInit {
 
   registrationFormGroup: FormGroup;
-  profileFormGroup: FormGroup;
 
-  constructor( private _dataRequestor: DataRequestorService ) {
+  constructor( private _dataRequestor: DataRequestorService, private _router: Router ) {
     this.registrationFormGroup = FormMaker.getRegistrationFormGroup();
-    this.profileFormGroup = FormMaker.getProfileFormGroup();
   }
 
   ngOnInit() {
   }
 
   onSubmit(): void {
-    if (this.registrationFormGroup.valid && this.profileFormGroup.valid) {
-      const registrationDto: RegistrationDto = new RegistrationDto( this.registrationFormGroup, this.profileFormGroup );
-      this._dataRequestor.postRequest('users', registrationDto ).subscribe( result => {
-        console.log(result);
+    if (this.registrationFormGroup.valid) {
+      const registrationFormDto: RegistrationFormDto = new RegistrationFormDto( this.registrationFormGroup);
+      this._dataRequestor.postRequest('users', registrationFormDto ).subscribe( result => {
+        this._router.navigate(['login']);
       });
     }
   }
