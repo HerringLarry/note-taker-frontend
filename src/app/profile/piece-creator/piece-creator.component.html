@@ -1,0 +1,16 @@
+<app-panel
+  [displaySmall]="false"
+  [title]="'Piece Creation'"
+>
+<mat-horizontal-stepper>
+  <mat-step>
+    <app-piece-form
+      [pieceForm]="pieceForm"
+      (submitEmitter)="onSubmit($event)"
+    ></app-piece-form>
+  </mat-step>
+  <mat-step>
+    <app-piece-photo-uploader></app-piece-photo-uploader>
+  </mat-step>
+</mat-horizontal-stepper>
+</app-panel>
