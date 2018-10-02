@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptor } from './header-interceptor.service';
 import { SessionService } from './common/services/session.service';
+import { ImageRequestorService } from './common/services/image-requestor.service';
+import { LogoutService } from './common/services/logout.service';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { SessionService } from './common/services/session.service';
   DataRequestorService,
   SessionService,
   UsernameService,
+  ImageRequestorService,
+  LogoutService,
   ],
   bootstrap: [AppComponent]
 })

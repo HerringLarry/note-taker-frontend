@@ -1,7 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { UsernameService } from './../../common/services/username.service';
 import { Component, OnInit } from '@angular/core';
 import { DataRequestorService } from '../../common/services/data-requestor.service';
 import { ProfileDto } from './dto/profile.dto';
+import { Observable } from 'rxjs';
+import { DomSanitizer} from '@angular/platform-browser';
+import { ImageRequestorService } from '../../common/services/image-requestor.service';
+
 
 @Component({
   selector: 'app-profile-component',
@@ -10,23 +15,9 @@ import { ProfileDto } from './dto/profile.dto';
 })
 export class ProfileComponent implements OnInit {
 
-  profile: ProfileDto;
-
-  constructor( private _dataRequestorService: DataRequestorService ) { }
+  constructor() { }
 
   ngOnInit() {
-    this._dataRequestorService.getRequest('profile/' + UsernameService.username).subscribe( (res: ProfileDto) => {
-      this.profile = res;
-    });
-  }
-
-  getProfilePhoto() {
-    console.log('hello');
-    return this._dataRequestorService.getImageRequest('profile/profileImage/82dc95722551b3d10bb97b7310c44331f3.jpg');
-  }
-
-  profileExists() {
-    return !this.profile ? false : true;
-  }
+    }
 
 }

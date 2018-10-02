@@ -14,6 +14,7 @@ export class HeaderInterceptor implements HttpInterceptor {
     constructor( private _router: Router ) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.log('in');
         return next.handle(
             SessionService.sessionToken ?
                 req.clone({
@@ -23,7 +24,6 @@ export class HeaderInterceptor implements HttpInterceptor {
                 }) :
                 req
         ).do((event: HttpEvent<any>) => {
-            console.log('in');
             if (event instanceof HttpResponse) {
               // do stuff with response if you want
             }

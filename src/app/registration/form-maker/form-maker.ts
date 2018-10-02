@@ -20,4 +20,11 @@ export class FormMaker {
             interests: new FormControl('', Validators.required),
         });
     }
+
+    static getPieceCreatorFormGroup(): FormGroup {
+        return new FormGroup({
+            title: new FormControl('', Validators.required),
+            description: new FormControl('', Validators.required),
+        });
+    }
 }

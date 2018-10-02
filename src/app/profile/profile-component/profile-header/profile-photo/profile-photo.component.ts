@@ -10,12 +10,16 @@ export class ProfilePhotoComponent implements OnInit {
 
   @Input() image: string;
   imageToShow: any;
+  spinning: boolean = true;
 
   constructor( private _imageRequestorService: ImageRequestorService ) { }
 
   ngOnInit() {
     const imageUrlExtended = 'profile/profileImage/' + this.image;
-    this._imageRequestorService.getImageAndSanitize( imageUrlExtended , ( image: any ) => this.imageToShow = image );
+    this._imageRequestorService.getImageAndSanitize( imageUrlExtended , ( image: any ) => {
+      this.imageToShow = image;
+      this.spinning = false;
+    });
   }
 
 }

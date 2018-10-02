@@ -18,6 +18,10 @@ const routes: Routes = [
     {
         path: 'uploads',
         loadChildren: '../app/uploads/uploads.module#UploadsModule',
+    },
+    {
+        path: 'profile',
+        loadChildren: '../app/profile/profile.module#ProfileModule'
     }
 ];
 
