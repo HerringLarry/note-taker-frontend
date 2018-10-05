@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UsernameService } from '../../../common/services/username.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { UsernameService } from '../../../common/services/username.service';
 export class PiecePhotoUploaderComponent implements OnInit {
 
   username = UsernameService.username;
+  @Input() pieceName: string;
 
   constructor() { }
 

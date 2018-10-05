@@ -26,7 +26,6 @@ export class ImageRequestorService {
     reader.addEventListener('load', () => {
        setImageToShow(this.sanitizer.bypassSecurityTrustUrl(reader.result));
     }, false);
-
     if (image) {
        reader.readAsDataURL(image);
   }

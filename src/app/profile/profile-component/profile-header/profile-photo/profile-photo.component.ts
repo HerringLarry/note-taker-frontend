@@ -17,6 +17,7 @@ export class ProfilePhotoComponent implements OnInit {
   ngOnInit() {
     const imageUrlExtended = 'profile/profileImage/' + this.image;
     this._imageRequestorService.getImageAndSanitize( imageUrlExtended , ( image: any ) => {
+      console.log('success');
       this.imageToShow = image;
       this.spinning = false;
     });

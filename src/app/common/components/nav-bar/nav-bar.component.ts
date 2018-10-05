@@ -33,6 +33,7 @@ export class NavBarComponent implements OnInit {
   }
 
   addPiece() {
+    this._router.navigate(['profile/creation']);
   }
 
   goToLogin() {

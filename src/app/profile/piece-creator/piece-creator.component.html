@@ -4,13 +4,15 @@
 >
 <mat-horizontal-stepper>
   <mat-step>
-    <app-piece-form
-      [pieceForm]="pieceForm"
+    <app-piece-form *ngIf="pieceDetailsFormGroup"
+      [formGroup]="pieceDetailsFormGroup"
       (submitEmitter)="onSubmit($event)"
     ></app-piece-form>
   </mat-step>
   <mat-step>
-    <app-piece-photo-uploader></app-piece-photo-uploader>
+    <app-piece-photo-uploader
+      [pieceName]="pieceDetailsFormGroup.value.title"
+    ></app-piece-photo-uploader>
   </mat-step>
 </mat-horizontal-stepper>
 </app-panel>
