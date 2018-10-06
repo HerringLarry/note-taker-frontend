@@ -16,12 +16,11 @@ export class PieceTileComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.piece);
     const imageUrlExtended = 'piece/photo/' + this.piece.piecePhotoURL;
-    // this._imageRequestorService.getImageAndSanitize( imageUrlExtended , ( image: any ) => {
-    //   console.log('successer');
-    //   this.imageToShow = image;
-    // });
+    this._imageRequestorService.getImageAndSanitize( imageUrlExtended , ( image: any ) => {
+      console.log('successer');
+      this.imageToShow = image;
+    });
   }
 
 }

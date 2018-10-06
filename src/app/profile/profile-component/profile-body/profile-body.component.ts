@@ -11,7 +11,7 @@ import { Piece } from '../helpers/piece';
 })
 export class ProfileBodyComponent implements OnInit {
 
-  pieces: string[] = ['1', '2', '2', '3', '4', '4', '5', '6']
+  pieces: Piece[];
 
   constructor( private _dataRequestorService: DataRequestorService ) { }
 
@@ -22,7 +22,7 @@ export class ProfileBodyComponent implements OnInit {
   getPieces() {
     this._dataRequestorService.getRequest('piece/' + UsernameService.username)
     .subscribe( (res: Piece[]) => {
-      // this.pieces = res;
+      this.pieces = res;
     });
   }
 
