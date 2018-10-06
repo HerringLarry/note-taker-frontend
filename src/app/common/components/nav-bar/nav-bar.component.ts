@@ -29,7 +29,7 @@ export class NavBarComponent implements OnInit {
   }
 
   goToSettings() {
-    this._router.navigate(['registration']);
+    this._router.navigate(['uploads']);
   }
 
   addPiece() {

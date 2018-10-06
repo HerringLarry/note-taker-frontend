@@ -1,4 +1,8 @@
+import { DataRequestorService } from './../../../common/services/data-requestor.service';
+import { PieceFormDto } from './../../piece-creator/dto/piece-form.dto';
 import { Component, OnInit } from '@angular/core';
+import { UsernameService } from '../../../common/services/username.service';
+import { Piece } from '../helpers/piece';
 
 @Component({
   selector: 'app-profile-body',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileBodyComponent implements OnInit {
 
-  constructor() { }
+  pieces: string[] = ['1', '2', '2', '3', '4', '4', '5', '6']
+
+  constructor( private _dataRequestorService: DataRequestorService ) { }
 
   ngOnInit() {
+    this.getPieces();
+  }
+
+  getPieces() {
+    this._dataRequestorService.getRequest('piece/' + UsernameService.username)
+    .subscribe( (res: Piece[]) => {
+      // this.pieces = res;
+    });
   }
 
 }

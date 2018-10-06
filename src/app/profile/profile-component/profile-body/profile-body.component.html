@@ -1,3 +1,6 @@
-<p>
-  profile-body works!
-</p>
+<div class="container" fxLayout='row' fxLayoutWrap fxLayoutGap="2rem">
+  <app-piece-tile  
+    *ngFor="let piece of pieces"
+    [piece]="piece"
+  ></app-piece-tile>
+</div>

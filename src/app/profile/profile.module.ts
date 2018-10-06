@@ -1,10 +1,11 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './profile-component/profile-component.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { SharedModule } from '../common/shared.module';
 // tslint:disable-next-line:max-line-length
-import { MatFormFieldModule, MatOptionModule, MatInputModule, MatSelectModule, MatButtonModule, MatProgressBarModule, MatProgressSpinnerModule, MatStepperModule } from '@angular/material';
+import { MatFormFieldModule, MatOptionModule, MatInputModule, MatSelectModule, MatButtonModule, MatProgressBarModule, MatProgressSpinnerModule, MatStepperModule, MatGridListModule, MatCardModule, MatPaginatorModule, MatGridTile } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { ProfileHeaderComponent } from './profile-component/profile-header/profile-header.component';
@@ -14,15 +15,16 @@ import { ProfileBodyComponent } from './profile-component/profile-body/profile-b
 import { PieceCreatorComponent } from './piece-creator/piece-creator.component';
 import { PieceFormComponent } from './piece-creator/piece-form/piece-form.component';
 import { PiecePhotoUploaderComponent } from './piece-creator/piece-photo-uploader/piece-photo-uploader.component';
+import { PieceTileComponent } from './profile-component/profile-body/piece-tile/piece-tile.component';
 @NgModule({
   imports: [
     CommonModule, SharedModule, ProfileRoutingModule,
     MatFormFieldModule, MatOptionModule, MatInputModule, MatSelectModule,
     MatButtonModule, ReactiveFormsModule, MatFileUploadModule, MatProgressSpinnerModule, MatFileUploadModule,
-    MatStepperModule,
+    MatStepperModule, MatGridListModule, MatCardModule, MatPaginatorModule, FlexLayoutModule,
   ],
   declarations: [ProfileComponent, ProfilePhotoComponent,
     ProfileHeaderComponent, ProfileInfoComponent, ProfileBodyComponent,
-    PieceCreatorComponent, PieceFormComponent, PiecePhotoUploaderComponent]
+    PieceCreatorComponent, PieceFormComponent, PiecePhotoUploaderComponent, PieceTileComponent]
 })
 export class ProfileModule { }

@@ -13,6 +13,9 @@ import { HeaderInterceptor } from './header-interceptor.service';
 import { SessionService } from './common/services/session.service';
 import { ImageRequestorService } from './common/services/image-requestor.service';
 import { LogoutService } from './common/services/logout.service';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
+
 
 
 @NgModule({
@@ -21,7 +24,7 @@ import { LogoutService } from './common/services/logout.service';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, SharedModule, AppRoutingModule,
-    ReactiveFormsModule, FormsModule, HttpClientModule,
+    ReactiveFormsModule, FormsModule, HttpClientModule, FlexLayoutModule,
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,
